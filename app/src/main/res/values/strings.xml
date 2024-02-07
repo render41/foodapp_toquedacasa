@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">foodapp_toquedacasa</string>
+    <string name="food_name">Delicious Dish</string>
+    <string name="food_description">A mouthwatering dish that will satisfy your cravings.</string>
+    <string name="order_button">Faça seu Pedido!</string>
+    <string name="food_image">Food Image</string>
+    <string name="starter_food">Entrada</string>
+    <string name="lunch">Almoço</string>
+    <string name="cart">Carrinho</string>
+    <string name="dessert">Sobremesa</string>
+    <string name="drinks">Bebidas</string>
+</resources>
