@@ -13,11 +13,16 @@
         android:theme="@style/Theme.Foodapp_toquedacasa"
         tools:targetApi="31">
         <activity
+            android:name=".activities.cart.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ordering_food.OrderingFoodActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
