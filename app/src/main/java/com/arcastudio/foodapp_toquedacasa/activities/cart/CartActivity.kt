@@ -8,6 +8,7 @@ import com.arcastudio.foodapp_toquedacasa.R
 import com.arcastudio.foodapp_toquedacasa.adapters.cart.CartAdapter
 import com.arcastudio.foodapp_toquedacasa.controllers.cart.CartManagerController
 import com.arcastudio.foodapp_toquedacasa.databinding.ActivityCartBinding
+import com.arcastudio.foodapp_toquedacasa.models.data.CartItemData
 
 class CartActivity : AppCompatActivity() {
 
@@ -21,23 +22,30 @@ class CartActivity : AppCompatActivity() {
 
         title = getString(R.string.cart_title)
 
-        cartAdapter = CartAdapter(CartManagerController.getCartItems())
+        // Obtenha a lista de itens do carrinho do CartManagerController
+        val cartItems = CartManagerController.getCartItems()
+
+        // Crie um novo adaptador de carrinho com a lista de itens do carrinho
+        cartAdapter = CartAdapter(CartManagerController.getCartItems().toMutableList())
+
+        // Configure o RecyclerView
         binding.recyclerViewCartItems.apply {
             layoutManager = LinearLayoutManager(this@CartActivity)
             adapter = cartAdapter
         }
 
+        // Configurar o botão Voltar na barra de ação
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.icon_back)
         }
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
+        // Configurar o botão Voltar na barra de ação para fechar a atividade
         binding.toolbar.setNavigationOnClickListener { finish() }
 
+        // Configurar o botão de finalização da compra
         binding.buttonCheckout.setOnClickListener {
-            // Adicione aqui a lógica para finalizar a compra
+            // Adicionar aqui a lógica para finalizar a compra
         }
     }
 
@@ -51,6 +59,4 @@ class CartActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
 }

@@ -15,12 +15,13 @@ import com.arcastudio.foodapp_toquedacasa.activities.food_details.FoodDetailsAct
 import com.arcastudio.foodapp_toquedacasa.controllers.cart.CartManagerController
 import com.arcastudio.foodapp_toquedacasa.models.data.FoodData
 
-class FoodAdapter(private val context: Context, private val foodDataList: List<FoodData>) :
-    RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+class FoodAdapter(
+    private val context: Context,
+    private val foodDataList: List<FoodData>
+) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_food_card, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_food_card, parent, false)
         return FoodViewHolder(itemView)
     }
 
@@ -34,15 +35,14 @@ class FoodAdapter(private val context: Context, private val foodDataList: List<F
                 putExtra("preparationTime", currentFood.preparationTime)
                 putExtra("ingredients", currentFood.ingredients)
                 putExtra("price", currentFood.price)
+                putExtra("imageResource", currentFood.imageResource)
             }
             context.startActivity(intent)
         }
 
-        // Configurar o clique do botão "Adicionar ao Carrinho"
         holder.buttonAddToCart.setOnClickListener {
-            // Adicionar a lógica para adicionar ao carrinho aqui
-            CartManagerController.addItem(currentFood.name, currentFood.price)
-            // Exibir um Toast ao adicionar o item ao carrinho
+            val imageResource = currentFood.imageResource // Obtém a imagem do item
+            CartManagerController.addItem(currentFood.name, currentFood.price, imageResource) // Passa a imagem ao adicionar ao carrinho
             Toast.makeText(context, "Item adicionado ao carrinho", Toast.LENGTH_SHORT).show()
         }
     }

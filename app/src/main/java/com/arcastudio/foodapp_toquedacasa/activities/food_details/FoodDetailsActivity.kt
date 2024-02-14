@@ -2,6 +2,7 @@ package com.arcastudio.foodapp_toquedacasa.activities.food_details
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.arcastudio.foodapp_toquedacasa.R
 import com.arcastudio.foodapp_toquedacasa.controllers.cart.CartManagerController
@@ -18,11 +19,13 @@ class FoodDetailsActivity : AppCompatActivity() {
         val preparationTime = intent.getStringExtra("preparationTime")
         val ingredients = intent.getStringExtra("ingredients")
         val price = intent.getDoubleExtra("price", 0.0)
+        val imageResource = intent.getIntExtra("imageResource", R.drawable.default_image)
 
         binding.textViewFoodName.text = foodName
         binding.textViewPreparationTime.text = preparationTime
         binding.textViewIngredients.text = ingredients
         binding.textViewPrice.text = String.format("R$ %.2f", price)
+        binding.imageViewFood.setImageResource(imageResource)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -36,7 +39,8 @@ class FoodDetailsActivity : AppCompatActivity() {
         binding.buttonAddToCart.setOnClickListener {
             val foodName = intent.getStringExtra("foodName")
             val price = intent.getDoubleExtra("price", 0.0)
-            if (foodName != null) CartManagerController.addItem(foodName, price)
+            val imageResource = intent.getIntExtra("imageResource", R.drawable.default_image)
+            if (foodName != null) CartManagerController.addItem(foodName, price, imageResource)
         }
     }
 
