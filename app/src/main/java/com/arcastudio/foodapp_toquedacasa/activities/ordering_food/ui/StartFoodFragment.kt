@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.arcastudio.foodapp_toquedacasa.R
 import com.arcastudio.foodapp_toquedacasa.adapters.ordering_food.FoodAdapter
 import com.arcastudio.foodapp_toquedacasa.models.data.FoodData
+import com.arcastudio.foodapp_toquedacasa.models.data.FoodObject.starterFoodList
 
 class StartFoodFragment : Fragment() {
 
@@ -28,34 +29,5 @@ class StartFoodFragment : Fragment() {
         return view
     }
 
-    private fun generateDummyFoodList(): List<FoodData> = listOf(
-        FoodData(
-            R.drawable.food_starter_french_fries,
-            "Batata Frita",
-            "Batatas cortadas em palitos e fritas.",
-            20,
-            10.99
-        ),
-        FoodData(
-            R.drawable.food_starter_bruschetta,
-            "Bruschetta de Tomate e Manjericão",
-            "Fatias de pão italiano grelhado cobertas com tomates frescos, manjericão, alho e azeite de oliva.",
-            10,
-            12.50
-        ),
-        FoodData(
-            R.drawable.food_starter_onion_soup,
-            "Sopa de Cebola Gratinada",
-            "Uma sopa de cebola caramelizada coberta com queijo Gruyère derretido e croutons crocantes.",
-            30,
-            18.75
-        ),
-        FoodData(
-            R.drawable.food_starter_shrimp,
-            "Camarão à Provençal",
-            "Camarões suculentos salteados em alho, tomate, vinho branco e ervas provençais.",
-            20,
-            24.99
-        )
-    )
+    private fun generateDummyFoodList(): List<FoodData> = starterFoodList
 }

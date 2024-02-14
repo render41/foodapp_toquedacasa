@@ -20,9 +20,4 @@ object CartManagerController {
         return cartItems.toList()
     }
 
-    fun removeItem(foodName: String) {
-        val itemToRemove = cartItems.find { it.foodName == foodName }
-        if (itemToRemove != null) cartItems.remove(itemToRemove)
-    }
-
 }
