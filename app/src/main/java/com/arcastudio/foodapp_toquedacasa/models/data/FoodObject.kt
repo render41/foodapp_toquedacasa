@@ -77,7 +77,7 @@ object FoodObject {
             R.drawable.drink_soda,
             "Refrigerante",
             "Uma bebida gaseificada e adoçada, disponível em uma variedade de sabores.",
-            1,
+            10,
             2.50
         ),
         FoodData(
