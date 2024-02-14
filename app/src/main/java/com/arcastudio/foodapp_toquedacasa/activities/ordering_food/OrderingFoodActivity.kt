@@ -30,10 +30,18 @@ class OrderingFoodActivity : AppCompatActivity() {
         switchFragments(StartFoodFragment())
         navigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.navigationStarterFood -> switchFragments(StartFoodFragment())
-                R.id.navigationLunch -> switchFragments(LunchFragment())
-                R.id.navigationDrink -> switchFragments(DrinkFragment())
-                R.id.navigationDessert -> switchFragments(DessertFragment())
+                R.id.navigationStarterFood -> {
+                    switchFragments(StartFoodFragment())
+                }
+                R.id.navigationLunch -> {
+                    switchFragments(LunchFragment())
+                }
+                R.id.navigationDrink -> {
+                    switchFragments(DrinkFragment())
+                }
+                R.id.navigationDessert -> {
+                    switchFragments(DessertFragment())
+                }
             }
             return@setOnItemSelectedListener true
         }
