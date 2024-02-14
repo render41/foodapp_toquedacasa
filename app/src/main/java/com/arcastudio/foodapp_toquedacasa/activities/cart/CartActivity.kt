@@ -22,28 +22,22 @@ class CartActivity : AppCompatActivity() {
 
         title = getString(R.string.cart_title)
 
-        // Obtenha a lista de itens do carrinho do CartManagerController
         val cartItems = CartManagerController.getCartItems()
 
-        // Crie um novo adaptador de carrinho com a lista de itens do carrinho
         cartAdapter = CartAdapter(CartManagerController.getCartItems().toMutableList())
 
-        // Configure o RecyclerView
         binding.recyclerViewCartItems.apply {
             layoutManager = LinearLayoutManager(this@CartActivity)
             adapter = cartAdapter
         }
 
-        // Configurar o botão Voltar na barra de ação
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.icon_back)
         }
 
-        // Configurar o botão Voltar na barra de ação para fechar a atividade
         binding.toolbar.setNavigationOnClickListener { finish() }
 
-        // Configurar o botão de finalização da compra
         binding.buttonCheckout.setOnClickListener {
             // Adicionar aqui a lógica para finalizar a compra
         }

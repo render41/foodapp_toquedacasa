@@ -2,7 +2,6 @@ package com.arcastudio.foodapp_toquedacasa.activities.food_details
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.arcastudio.foodapp_toquedacasa.R
 import com.arcastudio.foodapp_toquedacasa.controllers.cart.CartManagerController

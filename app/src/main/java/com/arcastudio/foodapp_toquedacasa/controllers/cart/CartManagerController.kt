@@ -6,14 +6,11 @@ object CartManagerController {
     private val cartItems: MutableList<CartItemData> = mutableListOf()
 
     fun addItem(foodName: String, price: Double, imageResource: Int) {
-        // Verificar se o item já está no carrinho
         val existingItem = cartItems.find { it.foodName == foodName }
 
         if (existingItem != null) {
-            // Se o item já estiver no carrinho, apenas atualize a quantidade
             existingItem.quantity++
         } else {
-            // Se o item não estiver no carrinho, adicione-o
             val newItem = CartItemData(foodName, price, 1, imageResource)
             cartItems.add(newItem)
         }

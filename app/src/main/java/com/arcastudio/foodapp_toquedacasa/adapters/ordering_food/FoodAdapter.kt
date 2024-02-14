@@ -41,8 +41,8 @@ class FoodAdapter(
         }
 
         holder.buttonAddToCart.setOnClickListener {
-            val imageResource = currentFood.imageResource // Obtém a imagem do item
-            CartManagerController.addItem(currentFood.name, currentFood.price, imageResource) // Passa a imagem ao adicionar ao carrinho
+            val imageResource = currentFood.imageResource
+            CartManagerController.addItem(currentFood.name, currentFood.price, imageResource)
             Toast.makeText(context, "Item adicionado ao carrinho", Toast.LENGTH_SHORT).show()
         }
     }
