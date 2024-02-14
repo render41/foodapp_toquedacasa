@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Toque da Casa</string>
-    <string name="food_name">Delicious Dish</string>
-    <string name="food_description">A mouthwatering dish that will satisfy your cravings.</string>
+    <string name="food_name">Comidas deliciosas ao toque da casa</string>
+    <string name="food_description">food description label</string>
     <string name="order_button">Faça seu Pedido!</string>
     <string name="food_image">Food Image</string>
     <string name="starter_food">Entrada</string>
@@ -9,6 +9,15 @@
     <string name="cart">Carrinho</string>
     <string name="dessert">Sobremesa</string>
     <string name="drinks">Bebidas</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart_title">Finalizar Pedido</string>
+    <string name="food_name_placeholder">Nome da Comida</string>
+    <string name="food_price_placeholder">Preço da Comida</string>
+    <string name="quantity_placeholder">0</string>
+    <string name="quantity_total_placeholder">00</string>
+    <string name="add_to_cart">Adicionar ao Carrinho</string>
+    <string name="finalize_purchase">Finalizar Compra</string>
+    <string name="food_name_label">Food Name</string>
+    <string name="price_food_label">price food</string>
+    <string name="time_food_label">time food label</string>
 </resources>

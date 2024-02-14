@@ -1,5 +1,6 @@
 package com.arcastudio.foodapp_toquedacasa.adapters.ordering_food
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -7,15 +8,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.arcastudio.foodapp_toquedacasa.R
 import com.arcastudio.foodapp_toquedacasa.activities.food_details.FoodDetailsActivity
+import com.arcastudio.foodapp_toquedacasa.controllers.cart.CartManagerController
 import com.arcastudio.foodapp_toquedacasa.models.data.FoodData
 
-class FoodAdapter(private val foodDataList: List<FoodData>) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+class FoodAdapter(private val context: Context, private val foodDataList: List<FoodData>) :
+    RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_food_card, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_food_card, parent, false)
         return FoodViewHolder(itemView)
     }
 
@@ -23,9 +28,7 @@ class FoodAdapter(private val foodDataList: List<FoodData>) : RecyclerView.Adapt
         val currentFood = foodDataList[position]
         holder.bind(currentFood)
 
-        // Configurar o OnClickListener para o card de comida
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
             val intent = Intent(context, FoodDetailsActivity::class.java).apply {
                 putExtra("foodName", currentFood.name)
                 putExtra("preparationTime", currentFood.preparationTime)
@@ -34,8 +37,15 @@ class FoodAdapter(private val foodDataList: List<FoodData>) : RecyclerView.Adapt
             }
             context.startActivity(intent)
         }
-    }
 
+        // Configurar o clique do botão "Adicionar ao Carrinho"
+        holder.buttonAddToCart.setOnClickListener {
+            // Adicionar a lógica para adicionar ao carrinho aqui
+            CartManagerController.addItem(currentFood.name, currentFood.price)
+            // Exibir um Toast ao adicionar o item ao carrinho
+            Toast.makeText(context, "Item adicionado ao carrinho", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun getItemCount() = foodDataList.size
 

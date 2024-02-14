@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Nome da Comida"
+        android:text="@string/food_name_label"
         android:textSize="18sp"
         android:textStyle="bold"/>
 
@@ -32,7 +32,8 @@
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@drawable/icon_timer" />
+            android:src="@drawable/icon_timer"
+            android:importantForAccessibility="no" />
 
         <Space
             android:layout_width="6dp"
@@ -43,20 +44,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="30 min"
+            android:text="@string/time_food_label"
             android:textSize="20sp" />
         <TextView
             android:id="@+id/dividerTexts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
         <TextView
             android:id="@+id/textViewPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="R$ 10,00"
+            android:text="@string/price_food_label"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -67,6 +69,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/orange_base"
-        android:text="Adicionar ao Carrinho" />
+        android:text="@string/add_to_cart"
+        tools:ignore="TextContrastCheck" />
 
 </LinearLayout>

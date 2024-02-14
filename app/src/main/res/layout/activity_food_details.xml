@@ -29,7 +29,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Imagem da comida -->
     <ImageView
         android:id="@+id/imageViewFood"
         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
         android:layout_marginTop="16dp"
         android:text="name food"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -57,19 +56,17 @@
         app:layout_constraintTop_toBottomOf="@id/imageViewFood"
         tools:ignore="HardcodedText" />
 
-    <!-- Tempo de preparo -->
     <TextView
         android:id="@+id/textViewPreparationTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="time food"
+        android:text="@string/time_food_label"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewFoodName" />
 
-    <!-- Descrição dos ingredientes -->
     <TextView
         android:id="@+id/textViewIngredients"
         android:layout_width="wrap_content"
@@ -81,29 +78,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPreparationTime" />
 
-    <!-- Preço -->
     <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="price food"
+        android:text="@string/price_food_label"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewIngredients" />
 
-    <!-- Botão Adicionar ao Carrinho -->
     <Button
         android:id="@+id/buttonAddToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Adicionar ao Carrinho"
+        android:backgroundTint="@color/orange_base"
+        android:text="@string/add_to_cart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPrice"
-        tools:ignore="HardcodedText" />
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

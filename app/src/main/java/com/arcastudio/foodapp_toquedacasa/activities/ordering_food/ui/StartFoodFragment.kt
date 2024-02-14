@@ -20,7 +20,7 @@ class StartFoodFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_start_food, container, false)
 
         val foodList = generateDummyFoodList()
-        val adapter = FoodAdapter(foodList)
+        val adapter = FoodAdapter(requireContext(), foodList) // Passando o contexto do fragmento
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewFood)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
