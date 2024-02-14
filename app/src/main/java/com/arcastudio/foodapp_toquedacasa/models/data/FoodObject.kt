@@ -64,4 +64,67 @@ object FoodObject {
             15.99
         )
     )
+
+    val drinksList = listOf(
+        FoodData(
+            R.drawable.drink_coffee,
+            "Café",
+            "Uma bebida quente feita a partir de grãos de café torrados, geralmente servida com ou sem leite.",
+            5,
+            3.99
+        ),
+        FoodData(
+            R.drawable.drink_soda,
+            "Refrigerante",
+            "Uma bebida gaseificada e adoçada, disponível em uma variedade de sabores.",
+            1,
+            2.50
+        ),
+        FoodData(
+            R.drawable.drink_orange_juice,
+            "Suco de Laranja",
+            "Suco natural de laranjas espremidas, geralmente servido gelado.",
+            5,
+            4.99
+        ),
+        FoodData(
+            R.drawable.drink_smoothie,
+            "Smoothie de Frutas",
+            "Uma bebida cremosa feita a partir de frutas frescas ou congeladas, geralmente misturadas com iogurte ou leite.",
+            6,
+            6.50
+        )
+    )
+
+    val dessertsList = listOf(
+        FoodData(
+            R.drawable.dessert_cake,
+            "Bolo de Chocolate",
+            "Um bolo de chocolate rico e úmido, geralmente coberto com glacê ou creme de chocolate.",
+            30,
+            15.99
+        ),
+        FoodData(
+            R.drawable.dessert_ice_cream,
+            "Sorvete",
+            "Um doce gelado feito a partir de leite ou creme, disponível em uma variedade de sabores.",
+            10,
+            7.50
+        ),
+        FoodData(
+            R.drawable.dessert_cheesecake,
+            "Cheesecake de Morango",
+            "Uma torta cremosa feita de cream cheese, servida com cobertura de morango.",
+            45,
+            20.75
+        ),
+        FoodData(
+            R.drawable.dessert_fruit_salad,
+            "Salada de Frutas",
+            "Uma mistura refrescante de frutas frescas, como morangos, uvas, melão e kiwi.",
+            15,
+            9.99
+        )
+    )
+
 }
