@@ -1,53 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="32dp">
 
     <ImageView
         android:id="@+id/imageViewFood"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/food_starter_french_fries" />
+        android:src="@drawable/food_starter_french_fries"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textViewFoodName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Nome da Comida"
         android:textSize="18sp"
-        android:gravity="center"/>
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/icon_timer" />
+
+        <Space
+            android:layout_width="6dp"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textViewTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:text="30 min"
-            android:textSize="14sp" />
-
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dividerTexts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/textViewPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="R$ 10,00"
-            android:textSize="14sp"
-            android:layout_marginStart="8dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonAddToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar ao Carrinho"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/orange_base"
+        android:text="Adicionar ao Carrinho" />
 
 </LinearLayout>

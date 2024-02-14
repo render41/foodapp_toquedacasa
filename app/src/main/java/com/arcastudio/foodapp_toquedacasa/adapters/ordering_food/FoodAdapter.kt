@@ -49,8 +49,8 @@ class FoodAdapter(private val foodDataList: List<FoodData>) : RecyclerView.Adapt
         fun bind(foodData: FoodData) {
             imageViewFood.setImageResource(foodData.imageResource)
             textViewFoodName.text = foodData.name
-            textViewTime.text = "Preparation Time: ${foodData.preparationTime} minutes"
-            textViewPrice.text = "Price: $${String.format("%.2f", foodData.price)}"
+            textViewTime.text = "${foodData.preparationTime} minutes"
+            textViewPrice.text = "R$${String.format("%.2f", foodData.price)}"
         }
     }
 }

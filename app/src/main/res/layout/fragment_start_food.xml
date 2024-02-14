@@ -29,13 +29,14 @@
                 android:layout_gravity="center"
                 android:text="@string/starter_food"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollListItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,10 +53,14 @@
                 android:id="@+id/recyclerViewFood"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:padding="8dp"
-                app:layout_constraintTop_toBottomOf="@id/appBarLayout"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
