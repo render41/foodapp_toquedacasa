@@ -15,13 +15,13 @@ class FoodDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val foodName = intent.getStringExtra("foodName")
-        val preparationTime = intent.getStringExtra("preparationTime")
+        val preparationTime = intent.getIntExtra("preparationTime", 0)
         val ingredients = intent.getStringExtra("ingredients")
         val price = intent.getDoubleExtra("price", 0.0)
         val imageResource = intent.getIntExtra("imageResource", R.drawable.default_image)
 
         binding.textViewFoodName.text = foodName
-        binding.textViewPreparationTime.text = preparationTime
+        binding.textViewPreparationTime.text = "$preparationTime minutos"
         binding.textViewIngredients.text = ingredients
         binding.textViewPrice.text = String.format("R$ %.2f", price)
         binding.imageViewFood.setImageResource(imageResource)

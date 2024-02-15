@@ -59,7 +59,7 @@ class FoodAdapter(
         fun bind(foodData: FoodData) {
             imageViewFood.setImageResource(foodData.imageResource)
             textViewFoodName.text = foodData.name
-            textViewTime.text = "${foodData.preparationTime} minutes"
+            textViewTime.text = "${foodData.preparationTime} minutos"
             textViewPrice.text = "R$${String.format("%.2f", foodData.price)}"
         }
     }
